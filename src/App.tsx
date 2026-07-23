@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import { loadGames, newId, rankedPlayers, saveGames, totalsFor, type Game } from './data/storage'
 import { detectLocale, locales, ui, type Locale } from './i18n'
+import { getStoredConsent, loadAnalytics } from './analytics'
+import CookieConsent from './CookieConsent'
 
 type View = 'home' | 'setup' | 'play'
 
@@ -53,6 +55,10 @@ export default function App() {
     window.localStorage.setItem('gamenight-locale', locale)
     document.documentElement.setAttribute('lang', locale)
   }, [locale])
+
+  useEffect(() => {
+    if (getStoredConsent() === 'granted') loadAnalytics()
+  }, [])
 
   const activeGame = games.find(g => g.id === activeGameId) ?? null
 
@@ -290,5 +296,6 @@ export default function App() {
       <a href="https://vibe-portfolio-one.vercel.app/" target="_blank" rel="noreferrer">Created by Bruno Rendeiro</a>
       <span className="powered-badge">⚡ Powered by AI</span>
     </footer>
+    <CookieConsent locale={locale} />
   </div>
 }

@@ -53,6 +53,9 @@ type UiStrings = {
   undoRound: string
   shareWhatsapp: string
   footerTagline: string
+  cookieBody: string
+  cookieAccept: string
+  cookieReject: string
   waResults: (name: string, date: string) => string
   waLine: (rank: number, name: string, total: number) => string
 }
@@ -94,6 +97,9 @@ export const ui: Record<Locale, UiStrings> = {
     undoRound: 'Desfazer última ronda',
     shareWhatsapp: '💬 Partilhar no WhatsApp',
     footerTagline: 'Tudo guardado neste browser (localStorage) — sem contas, sem servidor.',
+    cookieBody: 'Uso o Google Analytics para perceber quantas pessoas visitam este projeto. Aceitas cookies analíticos?',
+    cookieAccept: 'Aceitar',
+    cookieReject: 'Recusar',
     waResults: (name, date) => `Resultados de ${name} (${date}):`,
     waLine: (rank, name, total) => `${rank}º ${name} - ${total} pontos`,
   },
@@ -133,6 +139,9 @@ export const ui: Record<Locale, UiStrings> = {
     undoRound: 'Undo last round',
     shareWhatsapp: '💬 Share on WhatsApp',
     footerTagline: 'Everything saved in this browser (localStorage) — no accounts, no server.',
+    cookieBody: 'I use Google Analytics to understand how many people visit this project. Do you accept analytics cookies?',
+    cookieAccept: 'Accept',
+    cookieReject: 'Reject',
     waResults: (name, date) => `Results for ${name} (${date}):`,
     waLine: (rank, name, total) => `${rank}. ${name} - ${total} points`,
   },
@@ -172,6 +181,9 @@ export const ui: Record<Locale, UiStrings> = {
     undoRound: 'Letzte Runde rückgängig machen',
     shareWhatsapp: '💬 Auf WhatsApp teilen',
     footerTagline: 'Alles wird in diesem Browser gespeichert (localStorage) — keine Konten, kein Server.',
+    cookieBody: 'Ich verwende Google Analytics, um zu verstehen, wie viele Menschen dieses Projekt besuchen. Akzeptierst du Analyse-Cookies?',
+    cookieAccept: 'Akzeptieren',
+    cookieReject: 'Ablehnen',
     waResults: (name, date) => `Ergebnisse von ${name} (${date}):`,
     waLine: (rank, name, total) => `${rank}. ${name} - ${total} Punkte`,
   },
@@ -211,6 +223,9 @@ export const ui: Record<Locale, UiStrings> = {
     undoRound: 'Annuler la dernière manche',
     shareWhatsapp: '💬 Partager sur WhatsApp',
     footerTagline: 'Tout est enregistré dans ce navigateur (localStorage) — sans compte, sans serveur.',
+    cookieBody: "J'utilise Google Analytics pour comprendre combien de personnes visitent ce projet. Acceptes-tu les cookies analytiques ?",
+    cookieAccept: 'Accepter',
+    cookieReject: 'Refuser',
     waResults: (name, date) => `Résultats de ${name} (${date}) :`,
     waLine: (rank, name, total) => `${rank}. ${name} - ${total} points`,
   },
