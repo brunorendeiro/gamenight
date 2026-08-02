@@ -145,6 +145,7 @@ export default function App() {
 
   return <div className="app-shell">
     <header>
+      <h1 className="sr-only">GameNight</h1>
       <button className="brand" onClick={goHome} aria-label={t.home}>
         <span className="brand-mark">GN</span>
         <div><strong>GameNight</strong><small>{t.tagline}</small></div>
