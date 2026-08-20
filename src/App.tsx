@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { loadGames, newId, rankedPlayers, saveGames, totalsFor, type Game } from './data/storage'
 import { detectLocale, locales, ui, type Locale } from './i18n'
-import { getStoredConsent, loadAnalytics } from './analytics'
+import { getStoredConsent, loadAnalytics, loadAds } from './analytics'
 import CookieConsent from './CookieConsent'
 
 type View = 'home' | 'setup' | 'play'
@@ -57,7 +57,10 @@ export default function App() {
   }, [locale])
 
   useEffect(() => {
-    if (getStoredConsent() === 'granted') loadAnalytics()
+    if (getStoredConsent() === 'granted') {
+      loadAnalytics()
+      loadAds()
+    }
   }, [])
 
   const activeGame = games.find(g => g.id === activeGameId) ?? null
