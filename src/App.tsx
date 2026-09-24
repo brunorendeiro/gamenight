@@ -3,6 +3,7 @@ import { loadGames, newId, rankedPlayers, saveGames, totalsFor, type Game } from
 import { detectLocale, locales, ui, type Locale } from './i18n'
 import { getStoredConsent, loadAnalytics, loadAds } from './analytics'
 import CookieConsent from './CookieConsent'
+import AdSlot from './AdSlot'
 
 type View = 'home' | 'setup' | 'play'
 
@@ -239,6 +240,7 @@ export default function App() {
               </div>
             ))}
             <button className="primary whatsapp-share" onClick={() => shareToWhatsApp(activeGame, locale)}>{t.shareWhatsapp}</button>
+            {activeGame.finished && <AdSlot />}
           </div>
           : <div className="score-table-scroll">
             <table className="score-table">

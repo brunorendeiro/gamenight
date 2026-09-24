@@ -112,6 +112,9 @@ footer a:hover { color: var(--accent); }
 .powered-badge { color: var(--muted); font-size: 10px; }
 
 .whatsapp-share { margin-top: 4px; background: #25d366; border-color: #16813e; color: #06210f; }
+
+.ad-slot { margin: 24px 0 0; padding: 14px; border: 2px dashed var(--line); border-radius: 10px; }
+.ad-label { display: block; margin-bottom: 8px; color: var(--muted); font-size: 9px; text-transform: uppercase; letter-spacing: .1em; text-align: center; }
 .whatsapp-share:hover { box-shadow: 6px 6px 0 0 rgba(37, 211, 102, .4); }
 
 @media (max-width: 560px) {

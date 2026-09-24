@@ -40,8 +40,13 @@ export function loadAds() {
   script.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4561414438757131`
   document.head.appendChild(script)
 
+  // Auto ads (enable_page_level_ads) stay off: this app is mostly an interactive
+  // score tracker, and Google's automatic placement was putting ads on thin,
+  // content-free screens (setup, live scoring), which violates AdSense's policy
+  // on ads served on screens with no publisher content. We use a single manual
+  // ad unit instead, placed only where there's real content (see AdSlot.tsx).
   window.adsbygoogle = window.adsbygoogle || []
-  window.adsbygoogle.push({ google_ad_client: 'ca-pub-4561414438757131', enable_page_level_ads: true })
+  window.adsbygoogle.push({ google_ad_client: 'ca-pub-4561414438757131' })
 }
 
 export function setConsent(value: Consent) {
